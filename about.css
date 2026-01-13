@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Segoe UI", Arial, sans-serif;
+    user-select: none;
 }
 
 body {
@@ -134,6 +135,7 @@ body {
     padding: 8px 0;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    margin-left: -10px;
 }
 
 /* DROPDOWN TEXT BLUE */
@@ -147,6 +149,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     text-align: left;
+    margin-left: 10px;
 }
 
 .services-dropdown a:hover,

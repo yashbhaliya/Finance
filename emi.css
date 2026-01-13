@@ -133,6 +133,7 @@ body {
     padding: 8px 0;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    margin-left: -10px;
 }
 
 /* DROPDOWN TEXT BLUE */
@@ -146,11 +147,57 @@ body {
     align-items: center;
     justify-content: flex-start;
     text-align: left;
+    margin-left: 10px;
 }
 
 /* Show dropdown */
 .show {
     display: flex;
+}
+
+/* FOOTER CALCULATORS DROPDOWN */
+.footer-calculators-dropdown {
+    position: absolute;
+    top: 42px;
+    left: 0;
+    width: 280px;
+    background: white;
+    display: none;
+    flex-direction: column;
+    padding: 8px 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    margin-left: -10px;
+}
+
+.footer-calculators-dropdown a {
+    color: #0D8BF2;
+    padding: 12px 20px 12px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.footer-calculators-dropdown a:hover {
+    background: #0d8bf2;
+    color: white;
+}
+
+.footer-links li.footer-calculators {
+    position: relative;
+}
+
+.footer-links li.footer-calculators a i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.footer-calculators .rotate {
+    transform: rotate(180deg);
 }
 
 /* BUTTON */
@@ -486,6 +533,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: "Segoe UI", Arial, sans-serif;
+    user-select: none;
 }
 
 body {

@@ -34,12 +34,27 @@ calculatorsItem.addEventListener("click", function (e) {
 
 // Close dropdowns when clicking outside
 document.addEventListener("click", function (e) {
-    if (!e.target.closest(".services") && !e.target.closest(".calculators")) {
+    if (!e.target.closest(".services") && !e.target.closest(".calculators") && !e.target.closest(".footer-calculators")) {
         servicesDropdown.classList.remove("show");
         calculatorsDropdown.classList.remove("show");
         servicesArrow.classList.remove("rotate");
         calculatorsArrow.classList.remove("rotate");
+        footerCalculatorsDropdown.classList.remove("show");
+        footerCalculatorsArrow.classList.remove("rotate");
     }
+});
+
+// FOOTER CALCULATORS DROPDOWN
+const footerCalculatorsItem = document.querySelector(".footer-calculators > a");
+const footerCalculatorsDropdown = document.querySelector(".footer-calculators-dropdown");
+const footerCalculatorsArrow = footerCalculatorsItem.querySelector("i");
+
+// Toggle Footer Calculators
+footerCalculatorsItem.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    footerCalculatorsDropdown.classList.toggle("show");
+    footerCalculatorsArrow.classList.toggle("rotate");
 });
 
 // MOBILE MENU TOGGLE
