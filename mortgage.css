@@ -516,7 +516,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: url("../Img/loan-features.jpg") no-repeat center center/cover;
+  background: url("./Img/loan-features.jpg") no-repeat center center/cover;
   background-attachment: fixed;
   display: flex;
 }
