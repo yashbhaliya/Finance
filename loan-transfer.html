@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="loan-transfer.css">
+    <title>Loan Transfer Calculator - Moraturiam Financial Services</title>
+</head>
+
+<body>
+    <div class="top-header">
+        <div class="container">
+
+            <!-- Left Section -->
+            <div class="header-left">
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                    support@moratoriumfinserv.com
+                </span>
+                <span>
+                    <i class="fa-solid fa-phone"></i>
+                    (+91) 84888 44116
+                </span>
+            </div>
+
+            <!-- Right Section -->
+            <div class="header-right">
+                <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="nav-container">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="/Img/Moratorium-logo-2048x479.jpg" alt="Moratorium Financial Services">
+            </div>
+
+            <!-- Menu -->
+
+            <ul>
+                <div class="close-menu">
+                    <span><i class="fas fa-times"></i> CLOSE</span>
+                </div>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="services">
+                    <a href="#">
+                        Services <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+
+                    <!-- Dropdown -->
+                    <div class="services-dropdown">
+                        <a href="mortgage.html">Mortgage Loan</a>
+                        <a href="business.html">Business Loan</a>
+                    </div>
+                </li>
+
+                <li class="calculators">
+                    <a href="#">
+                        Calculators <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+
+                    <!-- Dropdown -->
+                    <div class="calculators-dropdown">
+                        <a href="loan-transfer.html">Loan Transfer Calculator</a>
+                        <a href="emi.html">EMI Calculator</a>
+                    </div>
+                </li>
+
+                <li><a href="contect-us.html">Contact Us</a></li>
+            </ul>
+
+
+            <!-- Button -->
+            <div class="nav-btn">
+                <a href="#">INQUIRY NOW</a>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="calculator-img">
+        <img src="/Img/calculator-1.jpg" alt="">
+        <h2>Loan Transfer Calculator</h2>
+    </div>
+
+
+    <section class="calculator-section">
+        <div class="calculator-container">
+
+            <!-- LEFT SIDE -->
+            <div class="calculator-left">
+
+                <!-- Example for one field (repeat same pattern) -->
+
+                <div class="field">
+                    <label>Current Loan Amount (₹)</label>
+                    <div class="input-row">
+                        <input type="range" id="loanAmount" min="50000" max="10000000" step="10000" value="100000">
+                        <input type="number" id="loanAmountInput" value="100000">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Current Interest Rate (%)</label>
+                    <div class="input-row">
+                        <input type="range" id="currentRate" min="1" max="20" step="0.1" value="10">
+                        <input type="number" id="currentRateInput" value="10">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Remaining Tenure (Years)</label>
+                    <div class="input-row">
+                        <input type="range" id="currentTenure" min="1" max="30" step="1" value="10">
+                        <input type="number" id="currentTenureInput" value="10">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>New Bank Interest Rate (%)</label>
+                    <div class="input-row">
+                        <input type="range" id="newRate" min="1" max="20" step="0.1" value="9">
+                        <input type="number" id="newRateInput" value="9">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>New Bank Tenure (Years)</label>
+                    <div class="input-row">
+                        <input type="range" id="newTenure" min="1" max="30" step="1" value="10">
+                        <input type="number" id="newTenureInput" value="10">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>One-Time Cost (Fees)</label>
+                    <div class="input-row">
+                        <input type="range" id="fees" min="0" max="200000" step="1000" value="0">
+                        <input type="number" id="feesInput" value="0">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="calculator-right">
+                <h3>Loan Transfer Results</h3>
+
+                <div class="result-row">
+                    <span>Current EMI:</span>
+                    <strong id="currentEmi">₹0</strong>
+                </div>
+
+                <div class="result-row">
+                    <span>New EMI:</span>
+                    <strong id="newEmi">₹0</strong>
+                </div>
+
+                <div class="result-row">
+                    <span>Monthly Savings:</span>
+                    <strong id="monthlySavings">₹0</strong>
+                </div>
+
+                <div class="result-row">
+                    <span>Net Benefits:</span>
+                    <strong id="netBenefits">₹0</strong>
+                </div>
+
+                <div class="result-row">
+                    <span>One-Time Cost (Fees):</span>
+                    <strong id="feesResult">₹0</strong>
+                </div>
+
+                <div class="result-row">
+                    <span>Gross Benefits:</span>
+                    <strong id="grossBenefits">₹0</strong>
+                </div>
+                <button class="apply-btn">APPLY NOW</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-text">
+                <h3>Have questions or need help finding the <span>right loan?</span></h3>
+                <p>
+                    Call us and our team will guide you to the best financial solution—at no extra cost.<br>
+                    We're here to help, not to lend.
+                </p>
+            </div>
+            <a href="#" class="cta-btn">Apply Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">→ Home</a></li>
+                    <li><a href="#">→ About Us</a></li>
+                    <li><a href="#">→ Calculators</a></li>
+                    <li><a href="#">→ Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">→ Mortgage Loan</a></li>
+                    <li><a href="#">→ Business Loan</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">→ EMI Calculator</a></li>
+                    <li><a href="#">→ Loan Transfer Calculator</a></li>
+                </ul>
+                <div class="social">
+                    <span>FOLLOW US :</span>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer-description">
+            With the trust of 5,000+ satisfied clients, we are redefining financial consultation and services. Our
+            exclusive Royal & Imperial Membership offers unmatched benefits, ensuring easy access to tailored financial
+            solutions.
+        </p>
+
+        <div class="footer-bottom">
+            <div class="logo">
+                <img src="/Img/Moratorium-logo-2048x479.jpg" alt="Moratorium Financial Services Logo">
+            </div>
+            <div class="contact">
+                <h4>Have questions? Get in touch with us</h4>
+                <p>+91-84888-44116 | support@moratoriumfinserv.com</p>
+            </div>
+            <div class="address">
+                <h4>ADDRESS :</h4>
+                <p>A/824, Sun West Bank, Opp. City Gold Cinema, Ashram Road, Ahmedabad, Gujarat 380009</p>
+            </div>
+        </div>
+
+
+    </footer>
+    <div class="copyright">
+        <p class="copy-right-p">© Copyright 2025 Moratorium Financial Services – All Rights Reserved</p>
+    </div>
+
+</body>
+<script src="loan-transfer.js"></script>
+
+
+</html>
