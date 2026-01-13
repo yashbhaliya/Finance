@@ -1,45 +1,80 @@
 // SERVICES DROPDOWN
-const servicesItem = document.querySelector(".services > a");
+const servicesItem = document.querySelector(".services");
 const servicesDropdown = document.querySelector(".services-dropdown");
 const servicesArrow = servicesItem.querySelector("i");
 
 // CALCULATORS DROPDOWN
-const calculatorsItem = document.querySelector(".calculators > a");
+const calculatorsItem = document.querySelector(".calculators");
 const calculatorsDropdown = document.querySelector(".calculators-dropdown");
 const calculatorsArrow = calculatorsItem.querySelector("i");
 
-// Toggle Services
-servicesItem.addEventListener("click", function (e) {
-    e.preventDefault();
+let servicesTimeout;
+let calculatorsTimeout;
 
-    servicesDropdown.classList.toggle("show");
-    servicesArrow.classList.toggle("rotate");
+// Open Services on hover
+servicesItem.addEventListener("mouseenter", function (e) {
+    clearTimeout(servicesTimeout);
+    clearTimeout(calculatorsTimeout);
+    servicesDropdown.classList.add("show");
+    servicesArrow.classList.add("rotate");
 
     // Close calculators if open
     calculatorsDropdown.classList.remove("show");
     calculatorsArrow.classList.remove("rotate");
 });
 
-// Toggle Calculators
-calculatorsItem.addEventListener("click", function (e) {
-    e.preventDefault();
+// Close Services on leave
+servicesItem.addEventListener("mouseleave", function (e) {
+    servicesTimeout = setTimeout(() => {
+        servicesDropdown.classList.remove("show");
+        servicesArrow.classList.remove("rotate");
+    }, 300);
+});
 
-    calculatorsDropdown.classList.toggle("show");
-    calculatorsArrow.classList.toggle("rotate");
+// Keep open when entering dropdown
+servicesDropdown.addEventListener("mouseenter", function (e) {
+    clearTimeout(servicesTimeout);
+});
+
+// Close when leaving dropdown
+servicesDropdown.addEventListener("mouseleave", function (e) {
+    servicesTimeout = setTimeout(() => {
+        servicesDropdown.classList.remove("show");
+        servicesArrow.classList.remove("rotate");
+    }, 300);
+});
+
+// Open Calculators on hover
+calculatorsItem.addEventListener("mouseenter", function (e) {
+    clearTimeout(servicesTimeout);
+    clearTimeout(calculatorsTimeout);
+    calculatorsDropdown.classList.add("show");
+    calculatorsArrow.classList.add("rotate");
 
     // Close services if open
     servicesDropdown.classList.remove("show");
     servicesArrow.classList.remove("rotate");
 });
 
-// Close dropdowns when clicking outside
-document.addEventListener("click", function (e) {
-    if (!e.target.closest(".services") && !e.target.closest(".calculators")) {
-        servicesDropdown.classList.remove("show");
+// Close Calculators on leave
+calculatorsItem.addEventListener("mouseleave", function (e) {
+    calculatorsTimeout = setTimeout(() => {
         calculatorsDropdown.classList.remove("show");
-        servicesArrow.classList.remove("rotate");
         calculatorsArrow.classList.remove("rotate");
-    }
+    }, 300);
+});
+
+// Keep open when entering dropdown
+calculatorsDropdown.addEventListener("mouseenter", function (e) {
+    clearTimeout(calculatorsTimeout);
+});
+
+// Close when leaving dropdown
+calculatorsDropdown.addEventListener("mouseleave", function (e) {
+    calculatorsTimeout = setTimeout(() => {
+        calculatorsDropdown.classList.remove("show");
+        calculatorsArrow.classList.remove("rotate");
+    }, 300);
 });
 
 // MOBILE MENU TOGGLE
